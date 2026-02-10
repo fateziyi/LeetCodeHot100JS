@@ -3,7 +3,7 @@
  * @param {ListNode} head
  * @return {boolean}
  */
-// 876. 链表的中间结点
+// 链表的中间结点
 function middleNode(head) {
   // 1. 初始化快慢指针，均指向头结点 head
   let slow = head, fast = head;
@@ -18,7 +18,7 @@ function middleNode(head) {
   return slow;
 }
 
-// 206. 反转链表
+// 反转链表
 function reverseList(head) {
   // 1. 初始化前驱结点 pre 为 null，当前结点 cur 为头结点 head
   let pre = null, cur = head;

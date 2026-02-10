@@ -20,20 +20,20 @@
  * @param {number} target
  * @return {number[]}
  */
-var twoSum = function(nums, target) {
+var twoSum = function (nums, target) {
     // 哈希表，键是数字值，值是该数字在数组中的下标
     const map = new Map()
-    
+
     // 遍历数组
-    for(let i = 0; i < nums.length; i++) {
+    for (let i = 0; i < nums.length; i++) {
         // 计算需要查找的目标差值
         let res = target - nums[i]
-        
+
         // 如果哈希表中存在该差值，说明找到了两个数
-        if(map.has(res)) {
+        if (map.has(res)) {
             return [map.get(res), i]
         }
-        
+
         // 如果不存在，将当前数字和下标存入哈希表
         map.set(nums[i], i)
     }

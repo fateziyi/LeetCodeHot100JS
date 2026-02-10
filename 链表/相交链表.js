@@ -19,10 +19,17 @@
  * @return {ListNode}
  */
 var getIntersectionNode = function (headA, headB) {
-  let p = headA, q = headB
+  // 1. 初始化两个指针，分别指向两个链表的头节点
+  let p = headA, q = headB;
+
+  // 2. 循环条件：两个指针不相等（未相遇）
   while (p !== q) {
-    p = p ? p.next : headB
-    q = q ? q.next : headA
+    // 3. 指针 p：有节点则走下一步，无则跳转到 B 的头节点
+    p = p ? p.next : headB;
+    // 4. 指针 q：有节点则走下一步，无则跳转到 A 的头节点
+    q = q ? q.next : headA;
   }
-  return q
+
+  // 5. 循环结束时，p===q：要么是交点，要么都是 null
+  return q; // 也可以 return p，结果一致
 };
